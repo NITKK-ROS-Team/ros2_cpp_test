@@ -1,0 +1,13 @@
+launch:
+  - node_container:
+      pkg: "rclcpp_components"
+      exec: "component_container"
+      name: "my_container"
+      namespace: ""
+      composable_node:
+        - pkg: "pub_sub_int32"
+          plugin: "pub_sub_int32::pub_int"
+          name: "node_talker"
+        - pkg: "pub_sub_int32"
+          plugin: "pub_sub_int32::sub_int"
+          name: "node_listener"
